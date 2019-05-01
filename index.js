@@ -4,7 +4,7 @@ module.exports = {
   name: 'shared-identity',
   version: '1.0.0',
   manifest: require('./manifest.json'),
-  init: function (ssb, config) { 
+  init: function (ssb, config) {
     // CACHE!!?????
     return {
       rebuild: function (opts, cb) {
