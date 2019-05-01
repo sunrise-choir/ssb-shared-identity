@@ -1,0 +1,5 @@
+{
+    "rebuild": "async",
+    "publish": "async",
+    "latest": "async"
+  }
