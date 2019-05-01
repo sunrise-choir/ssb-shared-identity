@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "flumelog-offset": "^3.4.0",
-    "pull-stream": "^3.6.9"
+    "monotonic-timestamp": "0.0.9",
+    "pull-stream": "^3.6.9",
+    "ssb-keys": "^7.1.6",
+    "ssb-validate": "^4.0.4"
   }
 }
