@@ -25,6 +25,11 @@ module.exports = {
     }
     function refresh () {
       refreshing = true
+      if (!fs.existsSync(logPath())) {
+        rebuild()
+        return
+      }
+
       var log = OffsetLog(logPath(), {
         flags: 'r',
         codec: {
@@ -134,6 +139,9 @@ module.exports = {
       if (watcher) {
         watcher.close()
       }
+
+      refreshing = true
+
       if (typeof opts === 'function' && !cb) {
         cb = opts
         opts = {}
@@ -157,6 +165,7 @@ module.exports = {
         pull.drain(null, function (err) {
           if (err) return cb && cb(err)
           watcher = watch()
+          refreshing = false
           cb && cb()
         })
       )
